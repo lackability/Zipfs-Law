@@ -2,35 +2,47 @@
 #include <fstream>
 #include "Sorting.h"
 
-std::string Sorting::fileFind(std::string filename)
+bool Sorting::fileFind(std::string filename)
 {
 	std::ifstream in_file("textsrc/" + filename);
 	if (in_file.fail()) {
-		std::cout << "error: file unable to open." << std::endl;
+		return false;
 	}
 	else {
-		std::cout << "success: file found." << std::endl;
+		return true;
 	}
-	return filename;
+	return true;
 };
 
-std::string Sorting::reformatCounting(std::string fileFind(std::string filename))
+std::string Sorting::reformat()
 {
-	//error here, figure out how to use child/parent function keywords
-	//maybe using the keyword of "this"?
+
+	std::cout << "Enter File Name: " << std::endl;
+	std::string filename;
 	std::cin >> filename;
+
+	if (fileFind(filename) == true) {
+		std::cout << "success: file found." << std::endl;
+	}
+	else {
+		std::cout << "error: file unable to open." << std::endl;
+	}
+
 
 	std::string words;
 
-	while (in_file >> words)
-	{
-		std::cout << "word: '" 
-				  << words 
-				  << "' has " 
-				  << words.length() 
-				  << " characters." 
-				  << std::endl;
-	}
 	return words;
-}
+
+	//use a for or while loop to test for words and limits in such text file.
+	//while (filename >> words)
+	//{
+	//	std::cout << "word: '"
+	//		<< words
+	//		<< "' has "
+	//		<< words.length()
+	//		<< " characters."
+	//		<< std::endl;
+	//}
+	//return words;
+};
 

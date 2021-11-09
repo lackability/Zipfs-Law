@@ -8,11 +8,12 @@
 class Sorting
 {
 	public:
-		std::string fileFind(std::string filename);
-
+		bool fileFind(std::string filename);
 		//formatting to remove symbols like -, . , , , ;, ! all that stuff
-		std::string reformatCounting(std::string fileFind(std::string filename));
-		//change to an output file? return ints / vector
+		std::string reformat();
+		//reformat should return a file
+
+		std::string counting();
 
 };
 
