@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="zipfslaw.cpp">
+    <ClCompile Include="zipfslaw\zipfslaw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sorting.cpp">
+    <ClCompile Include="zipfslaw\Sorting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sorting.h">
+    <ClInclude Include="zipfslaw\Sorting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
