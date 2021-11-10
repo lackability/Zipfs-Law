@@ -21,11 +21,24 @@ std::string Sorting::reformat()
 	std::string filename;
 	std::cin >> filename;
 
+	bool found = false;
+
 	if (fileFind(filename) == true) {
 		std::cout << "success: file found." << std::endl;
+		found = true;
 	}
 	else {
-		std::cout << "error: file unable to open." << std::endl;
+		std::cout << "error: file unable to open.\n try again?" << std::endl;
+		while (found == false) {
+			std::cin >> filename;
+			if (fileFind(filename) == false) {
+				std::cout << "try again?" << std::endl;
+			}
+			else {
+				found = true;
+			}
+		}
+		
 	}
 
 
