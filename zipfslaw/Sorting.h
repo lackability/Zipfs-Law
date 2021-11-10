@@ -8,9 +8,9 @@
 class Sorting
 {
 	public:
-		bool fileFind(std::string filename);
+		bool fileFind();
 		//formatting to remove symbols like -, . , , , ;, ! all that stuff
-		std::string reformat();
+		std::string reformat(std::string filename);
 		//reformat should return a file
 		std::string counting();
 };

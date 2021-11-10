@@ -2,59 +2,51 @@
 #include <fstream>
 #include "Sorting.h"
 
-bool Sorting::fileFind(std::string filename)
+bool Sorting::fileFind()
 {
+	std::string filename;
+	std::cout << "Enter File Name: " << std::endl;
+	std::cin >> filename;
 	std::ifstream in_file("textsrc/" + filename);
-	if (in_file.fail()) {
-		return false;
-	}
-	else {
-		return true;
+
+	bool found = false;
+	if (in_file.fail() == true) {
+		std::cout << "error: file unable to open.\ntry again?" << std::endl;
+		while (found == false) {
+			std::cin >> filename;
+			std::ifstream in_file("textsrc/" + filename);
+			if (in_file.fail() == true) {
+				std::cout << "try again?" << std::endl;
+			}
+			else {
+				std::cout << "success: file found." << std::endl;
+				break;
+			}
+		}
 	}
 	return true;
 };
 
-std::string Sorting::reformat()
+std::string Sorting::reformat(std::string filename)
 {
-
-	std::cout << "Enter File Name: " << std::endl;
-	std::string filename;
-	std::cin >> filename;
-
-	bool found = false;
-
-	if (fileFind(filename) == true) {
-		std::cout << "success: file found." << std::endl;
-		found = true;
-	}
-	else {
-		std::cout << "error: file unable to open.\n try again?" << std::endl;
-		while (found == false) {
-			std::cin >> filename;
-			if (fileFind(filename) == false) {
-				std::cout << "try again?" << std::endl;
-			}
-			else {
-				found = true;
-			}
-		}
-		
-	}
-
+	std::ifstream in_file("textsrc/" + filename);
+	std::vector<std::string>;
 	std::string words;
 
-	return words;
-
 	//use a for or while loop to test for words and limits in such text file.
-	//while (filename >> words)
-	//{
-	//	std::cout << "word: '"
-	//		<< words
-	//		<< "' has "
-	//		<< words.length()
-	//		<< " characters."
-	//		<< std::endl;
-	//}
-	//return words;
-};
+	/*if (in_file.is_open() == true) {
+		std::getline(in_file, "the");
+	}*/
+	return words;
+}
+
+
+std::string Sorting::counting()
+{
+
+	return std::string();
+}
+;
+
+
 

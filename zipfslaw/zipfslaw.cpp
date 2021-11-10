@@ -10,7 +10,7 @@ int main()
     //text file object
     Sorting Textfile;
 
-    Textfile.reformat();
+    Textfile.fileFind();
 
     // create the window
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
