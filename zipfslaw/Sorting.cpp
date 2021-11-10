@@ -41,7 +41,6 @@ std::string Sorting::reformat()
 		
 	}
 
-
 	std::string words;
 
 	return words;

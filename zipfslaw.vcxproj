@@ -147,10 +147,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="zipfslaw\Graph.cpp" />
     <ClCompile Include="zipfslaw\Sorting.cpp" />
     <ClCompile Include="zipfslaw\zipfslaw.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="zipfslaw\Graph.h" />
     <ClInclude Include="zipfslaw\Sorting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

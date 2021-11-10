@@ -12,8 +12,6 @@ class Sorting
 		//formatting to remove symbols like -, . , , , ;, ! all that stuff
 		std::string reformat();
 		//reformat should return a file
-
 		std::string counting();
-
 };
 
