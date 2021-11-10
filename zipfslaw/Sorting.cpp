@@ -2,20 +2,26 @@
 #include <fstream>
 #include "Sorting.h"
 
-bool Sorting::fileFind()
+std::string Sorting::fileRequest()
 {
 	std::string filename;
 	std::cout << "Enter File Name: " << std::endl;
+	return filename;
+};
+
+
+bool Sorting::fileFind(std::string filename)
+{
 	std::cin >> filename;
 	std::ifstream in_file("textsrc/" + filename);
 
 	bool found = false;
-	if (in_file.fail() == true) {
+	if (in_file.fail()) {
 		std::cout << "error: file unable to open.\ntry again?" << std::endl;
-		while (found == false) {
+		while (!found) {
 			std::cin >> filename;
 			std::ifstream in_file("textsrc/" + filename);
-			if (in_file.fail() == true) {
+			if (in_file.fail()) {
 				std::cout << "try again?" << std::endl;
 			}
 			else {
@@ -27,16 +33,22 @@ bool Sorting::fileFind()
 	return true;
 };
 
+
 std::string Sorting::reformat(std::string filename)
 {
 	std::ifstream in_file("textsrc/" + filename);
-	std::vector<std::string>;
+	std::vector<std::string> wordList;
 	std::string words;
+	char x = in_file.get();
 
-	//use a for or while loop to test for words and limits in such text file.
-	/*if (in_file.is_open() == true) {
-		std::getline(in_file, "the");
-	}*/
+	if(!in_file.eof()) {
+		while (in_file >> words) {
+			words = words + x;
+			x = in_file.get();
+		}
+		std::cout << words << std::endl;
+		words.clear();
+	} 
 	return words;
 }
 
@@ -45,8 +57,7 @@ std::string Sorting::counting()
 {
 
 	return std::string();
-}
-;
+};
 
 
 
