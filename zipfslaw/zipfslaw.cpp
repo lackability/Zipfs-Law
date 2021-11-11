@@ -12,7 +12,8 @@ int main()
 
     Textfile.fileRequest();
     Textfile.fileFind("test.txt");
-    Textfile.reformat("test.txt");
+    std::cout << Textfile.reformat("test.txt") << std::endl;
+    Textfile.counting();
 
     // create the window
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");

@@ -36,26 +36,16 @@ bool Sorting::fileFind(std::string filename)
 
 std::string Sorting::reformat(std::string filename)
 {
-	std::ifstream in_file("textsrc/" + filename);
-	std::vector<std::string> wordList;
-	std::string words;
-	char x = in_file.get();
+	//formatting to remove symbols like -, . , , , ;, ! all that stuff, dont care about grammar, ijust pure words
 
-	if(!in_file.eof()) {
-		while (in_file >> words) {
-			words = words + x;
-			x = in_file.get();
-		}
-		std::cout << words << std::endl;
-		words.clear();
-	} 
-	return words;
-}
+	std::ifstream in_file("textsrc/" + filename);
+	return std::string((std::istreambuf_iterator<char>(in_file)), std::istreambuf_iterator<char>());
+
+};
 
 
 std::string Sorting::counting()
 {
-
 	return std::string();
 };
 
