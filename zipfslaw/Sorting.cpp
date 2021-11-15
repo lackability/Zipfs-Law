@@ -43,17 +43,16 @@ std::string Sorting::reformat(std::string filename)
 	in_file.open("textsrc/" + filename);
 	std::string converted = std::string((std::istreambuf_iterator<char>(in_file)), std::istreambuf_iterator<char>());
 	for (int i = 0; i < converted.length(); i++) {
-		if (converted[i] == '—') {
-			converted.erase(i);
-		}
-
+		//fill with information reading in words, removal symbols.
 	}
+
 	return converted;
 };
 
 
 std::string Sorting::counting()
 {
+
 	return std::string();
 };
 
