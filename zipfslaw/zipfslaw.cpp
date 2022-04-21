@@ -1,8 +1,3 @@
-// zipfslaw.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <fstream>
-#include <SFML/Graphics.hpp>
 #include "Sorting.h"
 
 int main()
@@ -12,8 +7,9 @@ int main()
 
     Textfile.fileRequest();
     Textfile.fileFind("test.txt");
-    std::cout << Textfile.reformat("test.txt") << std::endl;
-    Textfile.counting();
+    Textfile.intialDisplay("test.txt");
+    //Textfile.counting();
+
 
     // create the window
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");

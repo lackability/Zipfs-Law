@@ -1,7 +1,4 @@
-﻿#include <iostream>
-#include <fstream>
-#include <string>
-#include "Sorting.h"
+﻿#include "Sorting.h"
 
 std::string Sorting::fileRequest()
 {
@@ -16,6 +13,7 @@ bool Sorting::fileFind(std::string filename)
 	std::cin >> filename;
 	std::ifstream in_file("textsrc/" + filename);
 
+	//logic statement to check if file exists within "folder" textsrc/
 	bool found = false;
 	if (in_file.fail()) {
 		std::cout << "error: file unable to open.\ntry again?" << std::endl;
@@ -35,23 +33,28 @@ bool Sorting::fileFind(std::string filename)
 };
 
 
-std::string Sorting::reformat(std::string filename)
+std::vector<char> Sorting::intialDisplay(std::string filename)
 {
-	//formatting to remove symbols like -, . , , , ;, ! all that stuff, dont care about grammar, ijust pure words
-
+	//input file
 	std::fstream in_file;
 	in_file.open("textsrc/" + filename);
-	std::string converted = std::string((std::istreambuf_iterator<char>(in_file)), std::istreambuf_iterator<char>());
-	for (int i = 0; i < converted.length(); i++) {
-		//fill with information reading in words, removal symbols.
+
+	std::vector<char> converted = std::vector<char>((std::istreambuf_iterator<char>(in_file)), std::istreambuf_iterator<char>());
+	//redisplays the text 
+	for (char i : converted) {
+		std::cout << i;
 	}
 
 	return converted;
 };
 
 
-std::string Sorting::counting()
+std::string Sorting::counting(std::vector<char> text)
 {
+	//creating a hashmap
+	//for (int i = 0; i < text.size(); i++) {
+	//	using map = std::map<class Key, class T>
+	//}
 
 	return std::string();
 };
