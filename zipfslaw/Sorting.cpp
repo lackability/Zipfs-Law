@@ -52,9 +52,9 @@ std::vector<char> Sorting::intialDisplay(std::string filename)
 std::string Sorting::counting(std::vector<char> text)
 {
 	//creating a hashmap
-	//for (int i = 0; i < text.size(); i++) {
-	//	using map = std::map<class Key, class T>
-	//}
+	for (int i = 0; i < text.size(); i++) {
+		std::map<char, std::vector<char>> charmap;
+	}
 
 	return std::string();
 };
