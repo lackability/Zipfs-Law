@@ -52,8 +52,12 @@ std::vector<char> Sorting::intialDisplay(std::string filename)
 std::string Sorting::counting(std::vector<char> text)
 {
 	//creating a hashmap
+	std::map<char, std::vector<char>> charmap;
+
 	for (int i = 0; i < text.size(); i++) {
-		std::map<char, std::vector<char>> charmap;
+
+		//how to move over this, input the contents of a vector, and convert it into key maps such as "a: 50"
+		charmap << text; 
 	}
 
 	return std::string();
