@@ -5,10 +5,11 @@ int main()
     //text file object
     Sorting Textfile;
 
-    Textfile.fileRequest();
-    Textfile.fileFind("test.txt");
+    std::map<std::string, size_t> stringMap;
+    Textfile.fileFind(stringMap);
     Textfile.intialDisplay("test.txt");
-    //Textfile.counting();
+    Textfile.inputToMap(stringMap);
+
 
 
     // create the window

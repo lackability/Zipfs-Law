@@ -9,8 +9,7 @@
 class Sorting
 {
 	public:
-		std::string fileRequest();
-		bool fileFind(std::string filename);
+		bool fileFind(std::map<std::string, size_t>& wordCount);
 		std::vector<char> intialDisplay(std::string filename);
-		std::string counting(std::vector<char> text);
+		std::string inputToMap(std::map<std::string, size_t>& wordCount);
 };

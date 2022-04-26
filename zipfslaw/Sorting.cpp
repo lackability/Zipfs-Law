@@ -1,20 +1,19 @@
 ﻿#include "Sorting.h"
 
-std::string Sorting::fileRequest()
+
+
+bool Sorting::fileFind(std::map<std::string, size_t>& wordCount)
 {
 	std::string filename;
 	std::cout << "Enter File Name: " << std::endl;
-	return filename;
-};
-
-
-bool Sorting::fileFind(std::string filename)
-{
 	std::cin >> filename;
 	std::ifstream in_file("textsrc/" + filename);
 
+	std::string word;
+
 	//logic statement to check if file exists within "folder" textsrc/
 	bool found = false;
+		
 	if (in_file.fail()) {
 		std::cout << "error: file unable to open.\ntry again?" << std::endl;
 		while (!found) {
@@ -25,6 +24,12 @@ bool Sorting::fileFind(std::string filename)
 			}
 			else {
 				std::cout << "success: file found." << std::endl;
+				//reads in each word from the file
+				in_file.open("textsrc/" + filename);
+				while (in_file >> word)
+				{
+					wordCount[word]++;
+				}
 				break;
 			}
 		}
@@ -41,6 +46,7 @@ std::vector<char> Sorting::intialDisplay(std::string filename)
 
 	std::vector<char> converted = std::vector<char>((std::istreambuf_iterator<char>(in_file)), std::istreambuf_iterator<char>());
 	//redisplays the text 
+
 	for (char i : converted) {
 		std::cout << i;
 	}
@@ -49,15 +55,12 @@ std::vector<char> Sorting::intialDisplay(std::string filename)
 };
 
 
-std::string Sorting::counting(std::vector<char> text)
+std::string Sorting::inputToMap(std::map<std::string, size_t>& wordCount)
 {
 	//creating a hashmap
-	std::map<char, std::vector<char>> charmap;
-
-	for (int i = 0; i < text.size(); i++) {
-
-		//how to move over this, input the contents of a vector, and convert it into key maps such as "a: 50"
-		charmap << text; 
+	for (auto itor = wordCount.begin(); itor != wordCount.end(); itor++)
+	{
+		std::cout << itor->first << " : " << itor->second << std::endl;
 	}
 
 	return std::string();
