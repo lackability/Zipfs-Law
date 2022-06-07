@@ -45,7 +45,7 @@ std::vector<char> Sorting::intialDisplay()
 };
 
 
-std::string Sorting::inputToMap(std::map<std::string, size_t>& wordCount)
+std::string Sorting::inputToMap(std::map<std::string, size_t>& text)
 {
 	/*creating a hashmap*/
 	for (int i = 0; i < text.size(); i++) {

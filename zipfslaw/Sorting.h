@@ -16,7 +16,7 @@ class Sorting
 
 
 		std::vector<char> intialDisplay();
-		std::string counting(std::vector<char> text);
+		std::string inputToMap(std::map<std::string, size_t>& text);
 
 		std::string getFilename();
 		void setFilename(std::string Nfilename);
