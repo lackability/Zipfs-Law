@@ -8,7 +8,6 @@ bool Sorting::fileFind()
 
 	//logic statement to check if file exists within "folder" textsrc/
 	bool found = false;
-
 	if (in_file.fail()) {
 
 		std::cout << "error: file unable to open.\ntry again?" << std::endl;
@@ -37,6 +36,7 @@ std::vector<char> Sorting::intialDisplay()
 
 	std::vector<char> converted = std::vector<char>((std::istreambuf_iterator<char>(in_file)), std::istreambuf_iterator<char>());
 	//redisplays the text 
+
 	for (char i : converted) {
 		std::cout << i;
 	}
@@ -45,7 +45,7 @@ std::vector<char> Sorting::intialDisplay()
 };
 
 
-std::string Sorting::counting(std::vector<char> text)
+std::string Sorting::inputToMap(std::map<std::string, size_t>& wordCount)
 {
 	/*creating a hashmap*/
 	for (int i = 0; i < text.size(); i++) {
