@@ -1,13 +1,15 @@
 #include "Sorting.h"
 
+
 int main()
 {
+    std::cout << "Please enter a file name: " << std::endl;
     //text file object
     Sorting Textfile;
 
-    Textfile.fileRequest();
-    Textfile.fileFind("test.txt");
-    Textfile.intialDisplay("test.txt");
+
+    Textfile.fileFind();
+    Textfile.intialDisplay();
     //Textfile.counting();
 
 

@@ -8,9 +8,19 @@
 
 class Sorting
 {
+	private:
+		std::string filename;
+
 	public:
-		std::string fileRequest();
-		bool fileFind(std::string filename);
-		std::vector<char> intialDisplay(std::string filename);
+		bool fileFind();
+
+
+		std::vector<char> intialDisplay();
 		std::string counting(std::vector<char> text);
+
+		std::string getFilename();
+		void setFilename(std::string Nfilename);
+
+		
+	
 };

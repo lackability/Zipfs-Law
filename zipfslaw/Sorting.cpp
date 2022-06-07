@@ -1,25 +1,21 @@
 ﻿#include "Sorting.h"
 
-std::string Sorting::fileRequest()
-{
-	std::string filename;
-	std::cout << "Enter File Name: " << std::endl;
-	return filename;
-};
 
-
-bool Sorting::fileFind(std::string filename)
+bool Sorting::fileFind()
 {
-	std::cin >> filename;
-	std::ifstream in_file("textsrc/" + filename);
+	std::cin >> this->filename;
+	std::ifstream in_file("textsrc/" + this->filename);
 
 	//logic statement to check if file exists within "folder" textsrc/
 	bool found = false;
+
 	if (in_file.fail()) {
+
 		std::cout << "error: file unable to open.\ntry again?" << std::endl;
 		while (!found) {
-			std::cin >> filename;
-			std::ifstream in_file("textsrc/" + filename);
+
+			std::cin >> this->filename;
+			std::ifstream in_file("textsrc/" + this->filename);
 			if (in_file.fail()) {
 				std::cout << "try again?" << std::endl;
 			}
@@ -33,11 +29,11 @@ bool Sorting::fileFind(std::string filename)
 };
 
 
-std::vector<char> Sorting::intialDisplay(std::string filename)
+std::vector<char> Sorting::intialDisplay()
 {
 	//input file
 	std::fstream in_file;
-	in_file.open("textsrc/" + filename);
+	in_file.open("textsrc/" + this->filename);
 
 	std::vector<char> converted = std::vector<char>((std::istreambuf_iterator<char>(in_file)), std::istreambuf_iterator<char>());
 	//redisplays the text 
@@ -51,13 +47,29 @@ std::vector<char> Sorting::intialDisplay(std::string filename)
 
 std::string Sorting::counting(std::vector<char> text)
 {
-	//creating a hashmap
-	//for (int i = 0; i < text.size(); i++) {
-	//	using map = std::map<class Key, class T>
-	//}
+	/*creating a hashmap*/
+	for (int i = 0; i < text.size(); i++) {
+		using map = std::map<class Key, class T>;
+	}
 
 	return std::string();
-};
+}
+
+
+
+
+
+
+std::string Sorting::getFilename()
+{
+	return filename;
+}
+
+void Sorting::setFilename(std::string Nfilename)
+{
+	filename = Nfilename;
+}
+
 
 
 
